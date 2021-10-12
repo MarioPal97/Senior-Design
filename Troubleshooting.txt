@@ -1,0 +1,30 @@
+Installing Pytesseract
+Note: when installing things use the following cmd unless otherwise stated
+python3 -m pip 
+
+I followed the INSTALLATION on github: 
+https://github.com/madmaze/pytesseract
+
+Then afterwards do following steps:- 
+
+Installing via pip (Pytesseract)
+python3 -m pip install pytesseract 
+
+Errors I came accross:-
+
+PATH ERR
+Adding the PATH
+export PATH=/home/pi/.local/bin:$PATH
+then use following cmd to see if PATH was added
+echo $PATH
+
+Afterwards I ran the test.py and got the following errors:-
+
+ImportError: libcblas.so.3: cannot open shared object file: 
+No such file or directory
+https://stackoverflow.com/questions/53347759/importerror-libcblas-so-3-cannot-open-shared-object-file-no-such-file-or-dire
+sudo apt-get install libatlas-base-dev
+
+ImportError: numpy.core.multiarray failed to import
+Install numpy 
+python3 -m pip install -U numpy
