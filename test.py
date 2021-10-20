@@ -21,7 +21,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
 	
 	rawCapture.truncate(0)
 
-	if key == ord("s"):
+	if key == ord('s'):
 		text = pytesseract.image_to_string(image)
 		print(text)
 		cv2.imshow("Frame", image)
