@@ -16,6 +16,6 @@ if "read" in command or "next" in command:
 	img = Image.open('test.png')
 	text = pytesseract.image_to_string(img)
 	print(text)
-	Say(text)
+	Say(text, str(125))
 
 
