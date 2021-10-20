@@ -1,4 +1,4 @@
 import os
 
-def Say(incomingTxt):
-  os.popen( 'espeak "'+incomingTxt+'" -s 125 --stdout | aplay 2>/dev/null')
+def Say(incomingTxt, speed):
+  os.popen( 'espeak "'+incomingTxt+'" -s "'+speed+'" --stdout | aplay 2>/dev/null')
