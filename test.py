@@ -1,10 +1,4 @@
-#import sys
-#sys.path.append('/usr/local/lib/python2.7/site-packages')
-#sys.path.append('/usr/local/lib/python3.5/dist-packages/pytesseract/')
-#sys.path.append('/usr/src/tesseract/tessdata ')
-#sys.path.append('/usr/bin/tesseract')
 import cv2
-#sys.path.append('/usr/src/tesseract')
 import pytesseract
 from picamera.array import PiRGBArray
 from picamera import PiCamera
