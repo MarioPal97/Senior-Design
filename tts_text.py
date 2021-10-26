@@ -1,6 +1,4 @@
 import speech_recognition as sr
-#from PIL import Image
-#import pytesseract
 from tts_speech import Say
 from image_to_text import Read
 r = sr.Recognizer()
