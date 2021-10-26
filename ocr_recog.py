@@ -28,7 +28,8 @@ result = requests.post(url_api,
 result = result.content.decode()
 result = json.loads(result)
 error = result.get("ErrorMessage")
-print(error)
+#To print errors from ocr.space
+#print(error)
 parsed_results = result.get("ParsedResults")[0]
 text_detected = parsed_results.get("ParsedText")
 print(text_detected)
