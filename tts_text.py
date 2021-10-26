@@ -1,7 +1,7 @@
 import speech_recognition as sr
 from PIL import Image
 import pytesseract
-from tts import Say
+from tts_speech import Say
 r = sr.Recognizer()
 
 with sr.Microphone(device_index=2) as source:
