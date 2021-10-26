@@ -12,7 +12,7 @@ with picamera.PiCamera() as camera:
     #camera.resolution = (1280,720)
     camera.capture('/home/pi/Desktop/image.jpg')
 
-img = cv2.imread("five.jpg")
+img = cv2.imread("image.jpg")
 height, width, _ = img.shape
 roi = img
 
