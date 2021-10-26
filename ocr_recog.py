@@ -4,6 +4,13 @@ import json
 import cv2
 import io
 import numpy as np
+import picamera
+
+
+with picamera.PiCamera() as camera:
+    #fishbowl camera
+    #camera.resolution = (1280,720)
+    camera.capture('/home/pi/Desktop/image.jpg')
 
 img = cv2.imread("five.jpg")
 height, width, _ = img.shape
