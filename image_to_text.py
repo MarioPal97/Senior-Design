@@ -8,6 +8,7 @@ import numpy as np
 
 def Read():
     with picamera.PiCamera() as camera:
+        camera.resolution = (1280,720)
         camera.capture('image.jpg')
 
     img = cv2.imread("image.jpg")
