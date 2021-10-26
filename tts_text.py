@@ -6,13 +6,6 @@ from image_to_text import Read
 r = sr.Recognizer()
 runningFlag = 1
 
-with sr.Microphone(device_index=2) as source:
-    r.adjust_for_ambient_noise(source)
-    print("Awaiting hotword (\"Eye Glasses\"):")
-    audio = r.listen(source)
-
-    command = r.recognize_sphinx(audio, language = "en-reduced")
-
 while(runningFlag):
     with sr.Microphone(device_index=2) as source:
         r.adjust_for_ambient_noise(source)
@@ -59,10 +52,3 @@ while(runningFlag):
     elif "EXIT" in command:
         print("Exiting software...\n")
         runningFlag = 0
-        
-    
-    
-    #img = Image.open('test.png')
-    #text = pytesseract.image_to_string(img)
-    #print(text)
-    #Say(text)
