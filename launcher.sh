@@ -4,6 +4,6 @@
 #then execute script
 
 cd /
-cd /home/pi/Documents/Senior-Design
-sudo python3 tts_text.py
+cd /home/pi/Documents/Senior-Design   #where the script is
+sudo python3 tts_text.py              #command to run the script
 
