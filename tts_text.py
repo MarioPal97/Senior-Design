@@ -3,6 +3,7 @@ from tts_speech import Say
 from image_to_text import Read
 r = sr.Recognizer()
 runningFlag = 1
+imageText = ""
 
 while(runningFlag):
     with sr.Microphone(device_index=2) as source:
@@ -33,11 +34,13 @@ while(runningFlag):
             elif "REPEAT" in command:
                 if "SLOWER" in command:
                     readSpeed = readSpeed - 25
+                    print(imageText)
                     print("Repeating slower\n")
-                    Say("Repeating slower", str(readSpeed))
+                    Say(imageText, str(readSpeed))
                 else:
+                    print(imageText)
                     print("Repeating the page\n")
-                    Say("Repeating the page", str(readSpeed))
+                    Say(imageText, str(readSpeed))
             elif "STOP" in command:
                 Say(" ", str(readSpeed))
             elif "READ" in command and "FIRST" in command:
@@ -46,6 +49,7 @@ while(runningFlag):
                 Say("Reading the first line", str(readSpeed))
             elif "SLEEP" in command:
                 print("Going to sleep, awaiting hotword\n")
+                imageText = ""
                 listenFlag = 0
     elif "EXIT" in command:
         print("Exiting software...\n")
