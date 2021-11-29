@@ -1,0 +1,24 @@
+To install audio portion
+
+Install pyaudio
+	sudo apt-get install python3-pyaudio
+
+Install pocketsphynx
+	sudo apt-get install swig libpulse-dev bison libasound2-dev alsa-utils gcc
+	sudo pip3 install pocketsphinx
+
+Install speechrecognition
+	sudo pip3 install SpeechRecognition
+
+Install espeak
+	sudo apt-get install espeak
+
+Use "lsusb" to see which device the microphone (or sound card) is set as
+Use "alsamixer" to make sure the gain on both the earpiece and microphone is all the way up
+
+Replacing the pocketsphynx dictionary:
+	Place the "en-reduced" folder in your /home/pi directory
+	Then enter the command:
+		sudo mv en-reduced /usr/local/lib/python3.7/dist-packages/speech_recognition/pocketsphinx-data/
+
+	
