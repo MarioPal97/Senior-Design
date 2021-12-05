@@ -45,8 +45,10 @@ while(runningFlag):
                 Say(" ", str(readSpeed))
             elif "READ" in command and "FIRST" in command:
                 readSpeed = 125
-                print("Reading the first line (not implemented yet)\n")
-                Say("Reading the first line", str(readSpeed))
+                imageText = Read()
+                imageText = imageText.partition('\n')[0]
+                print(imageText)
+                Say(imageText, str(readSpeed))
             elif "SLEEP" in command:
                 print("Going to sleep, awaiting hotword\n")
                 imageText = ""
