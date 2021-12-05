@@ -10,8 +10,12 @@ while(runningFlag):
         r.adjust_for_ambient_noise(source)
         print("Awaiting hotword (\"Eye Glasses\"):")
         audio = r.listen(source)
-
-    command = r.recognize_sphinx(audio, language = "en-reduced")
+        
+    try:
+        command = r.recognize_sphinx(audio, language = "en-reduced")
+    except sr.UnknownValueError:
+        command = ""
+        
 
     if "EYE GLASSES" in command:
         print("Hotword detected\n")
@@ -22,8 +26,12 @@ while(runningFlag):
                 r.adjust_for_ambient_noise(source)
                 print("Give your command:")
                 audio = r.listen(source)
-
-            command = r.recognize_sphinx(audio, language = "en-reduced")
+                
+            try:
+                command = r.recognize_sphinx(audio, language = "en-reduced")
+            except sr.UnknownValueError:
+                command = ""   
+                
             print("Command received:", command)
 
             if "READ" in command and "PAGE" in command:
