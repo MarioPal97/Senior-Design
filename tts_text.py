@@ -28,10 +28,10 @@ while(runningFlag):
                 print("Give your command:")
                 audio = r.listen(source)
                 
-            try:
-                command = r.recognize_sphinx(audio, language = "en-reduced")
-            except sr.UnknownValueError:
-                command = ""   
+            #try:
+            command = r.recognize_sphinx(audio, language = "en-reduced")
+            #except sr.UnknownValueError:
+                #command = ""   
                 
             print("Command received:", command)
 
