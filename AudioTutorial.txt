@@ -13,8 +13,10 @@ Install speechrecognition
 Install espeak
 	sudo apt-get install espeak
 
-Use "lsusb" to see which device the microphone (or sound card) is set as
+Use "arecord -l" to see which device the microphone (or sound card) is set as
+	Whichever is the index of the microphone in the list of devices, you will change the micIndex variable in tts_text.py to equal that index number
 Use "alsamixer" to make sure the gain on both the earpiece and microphone is all the way up
+	With the sound card we are using, it may be sufficient to leave the output volume at a medium level.
 
 Replacing the pocketsphynx dictionary:
 	Place the "en-reduced" folder in your /home/pi directory
