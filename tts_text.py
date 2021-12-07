@@ -12,10 +12,10 @@ while(runningFlag):
         print("Awaiting hotword (\"Eye Glasses\"):")
         audio = r.listen(source)
         
-    try:
-        command = r.recognize_sphinx(audio, language = "en-reduced")
-    except sr.UnknownValueError:
-        command = ""
+    #try:
+    command = r.recognize_sphinx(audio, language = "en-reduced")
+    #except sr.UnknownValueError:
+        #command = ""
         
 
     if "EYE GLASSES" in command:
