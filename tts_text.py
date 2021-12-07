@@ -4,7 +4,7 @@ from image_to_text import Read
 r = sr.Recognizer()
 runningFlag = 1
 imageText = ""
-micIndex = 0
+micIndex = 1
 
 while(runningFlag):
     with sr.Microphone(device_index=micIndex) as source:
@@ -12,10 +12,10 @@ while(runningFlag):
         print("Awaiting hotword (\"Eye Glasses\"):")
         audio = r.listen(source)
         
-    #try:
-    command = r.recognize_sphinx(audio, language = "en-reduced")
-    #except sr.UnknownValueError:
-        #command = ""
+    try:
+        command = r.recognize_sphinx(audio, language = "en-reduced")
+    except sr.UnknownValueError:
+        command = ""
         
 
     if "EYE GLASSES" in command:
@@ -28,10 +28,10 @@ while(runningFlag):
                 print("Give your command:")
                 audio = r.listen(source)
                 
-            #try:
-            command = r.recognize_sphinx(audio, language = "en-reduced")
-            #except sr.UnknownValueError:
-                #command = ""   
+            try:
+                command = r.recognize_sphinx(audio, language = "en-reduced")
+            except sr.UnknownValueError:
+                command = ""   
                 
             print("Command received:", command)
 
