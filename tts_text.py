@@ -4,6 +4,7 @@ from image_to_text import Read
 r = sr.Recognizer()
 runningFlag = 1
 imageText = " "
+command = " "
 micIndex = 0
 
 while(runningFlag):
