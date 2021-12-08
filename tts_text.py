@@ -4,7 +4,7 @@ from image_to_text import Read
 r = sr.Recognizer()
 runningFlag = 1
 imageText = ""
-micIndex = 1
+micIndex = 0
 
 while(runningFlag):
     with sr.Microphone(device_index=micIndex) as source:
