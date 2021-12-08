@@ -7,15 +7,15 @@ imageText = " "
 micIndex = 0
 
 while(runningFlag):
+    print("Awaiting hotword (\"Eye Glasses\"):")
     with sr.Microphone(device_index=micIndex) as source:
         #r.adjust_for_ambient_noise(source)
-        print("Awaiting hotword (\"Eye Glasses\"):")
         audio = r.listen(source)
         
     try:
         command = r.recognize_sphinx(audio, language = "en-reduced")
     except sr.UnknownValueError:
-        command = " "
+        command = "No command recieved..."
         
 
     if "EYE GLASSES" in command:
@@ -23,15 +23,15 @@ while(runningFlag):
         listenFlag = 1
         readSpeed = 125
         while(listenFlag):
+            print("Give your command:")
             with sr.Microphone(device_index=micIndex) as source:
                 #r.adjust_for_ambient_noise(source)
-                print("Give your command:")
                 audio = r.listen(source)
                 
             try:
                 command = r.recognize_sphinx(audio, language = "en-reduced")
             except sr.UnknownValueError:
-                command = " "   
+                command = "No command recieved..."   
                 
             print("Command received:", command)
 
