@@ -12,7 +12,7 @@ def Read():
         camera.capture('image.jpg')
 
     img = cv2.imread("image.jpg")
-    img = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE) 
+    img = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE) 
     height, width, _ = img.shape
     roi = img
 
