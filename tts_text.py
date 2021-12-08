@@ -3,7 +3,7 @@ from tts_speech import Say
 from image_to_text import Read
 r = sr.Recognizer()
 runningFlag = 1
-imageText = ""
+imageText = " "
 micIndex = 0
 
 while(runningFlag):
@@ -12,10 +12,10 @@ while(runningFlag):
         print("Awaiting hotword (\"Eye Glasses\"):")
         audio = r.listen(source)
         
-    try:
-        command = r.recognize_sphinx(audio, language = "en-reduced")
-    except sr.UnknownValueError:
-        command = ""
+    #try:
+    command = r.recognize_sphinx(audio, language = "en-reduced")
+    #except sr.UnknownValueError:
+        #command = " "
         
 
     if "EYE GLASSES" in command:
@@ -28,10 +28,10 @@ while(runningFlag):
                 print("Give your command:")
                 audio = r.listen(source)
                 
-            try:
-                command = r.recognize_sphinx(audio, language = "en-reduced")
-            except sr.UnknownValueError:
-                command = ""   
+            #try:
+            command = r.recognize_sphinx(audio, language = "en-reduced")
+            #except sr.UnknownValueError:
+                #command = " "   
                 
             print("Command received:", command)
 
@@ -60,7 +60,7 @@ while(runningFlag):
                 Say(imageText, str(readSpeed))
             elif "SLEEP" in command:
                 print("Going to sleep, awaiting hotword\n")
-                imageText = ""
+                imageText = " "
                 listenFlag = 0
     elif "EXIT" in command:
         print("Exiting software...\n")
