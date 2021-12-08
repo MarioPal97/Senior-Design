@@ -2,6 +2,7 @@ import speech_recognition as sr
 from tts_speech import Say
 from image_to_text import Read
 r = sr.Recognizer()
+r.energy_threshold = 2000
 runningFlag = 1
 imageText = " "
 command = " "
