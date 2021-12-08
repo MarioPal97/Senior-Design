@@ -13,7 +13,7 @@ while(runningFlag):
         #r.adjust_for_ambient_noise(source)
         #Say("Awaiting hot word", "125")
         print("Awaiting hotword (\"Eye Glasses\"):")
-        audio = r.listen(source)
+        audio = r.listen(source, phrase_time_limit = 5)
         
     try:
         command = r.recognize_sphinx(audio, language = "en-reduced")
@@ -29,7 +29,7 @@ while(runningFlag):
             with sr.Microphone(device_index=micIndex) as source:
                 #r.adjust_for_ambient_noise(source)
                 print("Give your command:")
-                audio = r.listen(source)
+                audio = r.listen(source, phrase_time_limit = 5)
                 
             try:
                 command = r.recognize_sphinx(audio, language = "en-reduced")
