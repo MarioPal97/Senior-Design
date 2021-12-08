@@ -4,10 +4,10 @@ from image_to_text import Read
 r = sr.Recognizer()
 runningFlag = 1
 imageText = ""
-micIndex = 0
+#micIndex = 0
 
 while(runningFlag):
-    with sr.Microphone(device_index=micIndex) as source:
+    with sr.Microphone() as source:
         r.adjust_for_ambient_noise(source)
         print("Awaiting hotword (\"Eye Glasses\"):")
         audio = r.listen(source)
@@ -23,7 +23,7 @@ while(runningFlag):
         listenFlag = 1
         readSpeed = 125
         while(listenFlag):
-            with sr.Microphone(device_index=micIndex) as source:
+            with sr.Microphone() as source:
                 r.adjust_for_ambient_noise(source)
                 print("Give your command:")
                 audio = r.listen(source)
