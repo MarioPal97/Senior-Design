@@ -11,7 +11,6 @@ micIndex = 0
 while(runningFlag):
     with sr.Microphone(device_index=micIndex) as source:
         #r.adjust_for_ambient_noise(source)
-        #Say("Awaiting hot word", "125")
         print("Awaiting hotword (\"Eye Glasses\"):")
         audio = r.listen(source, phrase_time_limit = 5)
         
